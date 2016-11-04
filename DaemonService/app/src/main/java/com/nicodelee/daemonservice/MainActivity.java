@@ -1,8 +1,10 @@
 package com.nicodelee.daemonservice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import com.nicodelee.daemonservice.service.WhiteService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   @Override public void onClick(View view) {
     switch (view.getId()){
       case R.id.btn_white:
-
+        Intent whiteInten = new Intent(this,WhiteService.class);
+        startService(whiteInten);
         break;
       case R.id.btn_gray:
 
